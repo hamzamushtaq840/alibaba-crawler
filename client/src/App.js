@@ -7,7 +7,7 @@ import { CSVLink } from "react-csv";
 
 function App() {
   const [search, setSearch] = useState("")
-  const [data, setData] = useState([])
+  const [data5, setData] = useState([])
   const [state, setState] = useState(false)
 
   const handleClick = () => {
@@ -17,8 +17,9 @@ function App() {
     }
     setData([])
     setState(true)
+    console.log('clicked awaked')
 
-    axios.get("http://localhost:5000/" + search)
+    axios.get("http://localhost:5009/" + search)
       .then((res) => {
         console.log(res.data)
         setState(false)
@@ -48,8 +49,8 @@ function App() {
         <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
         <button onClick={handleClick}>Search</button>
 
-        {data.length !== 0 &&
-          <CSVLink className='link' data={data} headers={headers}>
+        {data5.length !== 0 &&
+          <CSVLink className='link' data={data5} headers={headers}>
             Download me
           </CSVLink>}
         {state && <MagnifyingGlass
