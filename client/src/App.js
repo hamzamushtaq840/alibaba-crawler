@@ -17,6 +17,7 @@ function App() {
     }
     setData([])
     setState(true)
+    console.log('f')
 
     axios.get("http://localhost:5000/" + search)
       .then((res) => {
