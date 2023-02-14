@@ -12,7 +12,7 @@ function App() {
 
   const handleClick = () => {
     if (!search) {
-      alert("write value first")
+      alert("write valueg first")
       return
     }
     setData([])
