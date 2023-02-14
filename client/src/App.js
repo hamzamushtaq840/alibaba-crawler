@@ -6,19 +6,19 @@ import { MagnifyingGlass } from 'react-loader-spinner'
 import { CSVLink } from "react-csv";
 
 function App() {
-  const [search1, setSearch] = useState("")
-  const [data1, setData] = useState([])
-  const [state1, setState] = useState(false)
+  const [search, setSearch] = useState("")
+  const [data, setData] = useState([])
+  const [state, setState] = useState(false)
 
   const handleClick = () => {
-    if (!search1) {
+    if (!search) {
       alert("write value first")
       return
     }
     setData([])
     setState(true)
 
-    axios.get("http://localhost:5000/" + search1)
+    axios.get("http://localhost:5000/" + search)
       .then((res) => {
         console.log(res.data)
         setState(false)
@@ -45,14 +45,14 @@ function App() {
     <div className="App">
       <div className='left'>
 
-        <input type="text" value={search1} onChange={(e) => setSearch(e.target.value)} />
+        <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} />
         <button onClick={handleClick}>Search</button>
 
-        {data1.length !== 0 &&
-          <CSVLink className='link' data={data1} headers={headers}>
+        {data.length !== 0 &&
+          <CSVLink className='link' data={data} headers={headers}>
             Download me
           </CSVLink>}
-        {state1 && <MagnifyingGlass
+        {state && <MagnifyingGlass
           visible={true}
           height="80"
           width="80"
