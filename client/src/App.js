@@ -17,7 +17,11 @@ function App() {
     }
     setData([])
     setState(true)
-    console.log('clicked')
+    console.log('clickeda')
+
+    //head
+
+    //h
 
     axios.get("http://localhost:5009/" + search)
       .then((res) => {
