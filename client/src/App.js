@@ -17,7 +17,7 @@ function App() {
     }
     setData([])
     setState(true)
-    console.log('clicked awaked')
+    console.log('clicked')
 
     axios.get("http://localhost:5009/" + search)
       .then((res) => {
